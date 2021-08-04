@@ -1,0 +1,31 @@
+cur_tem = 20
+def set_tem(des_tem):
+    cur_tem = 20
+    if cur_tem < int(des_tem):
+        while True:
+            cur_tem += 1
+            print(f"현재 온도는 {cur_tem}도 입니다.")
+            if cur_tem == int(des_tem):
+                break
+    elif cur_tem > int(des_tem):
+        while True:    
+            cur_tem -= 1
+            print(f"현재 온도는 {cur_tem}도 입니다.")
+            if cur_tem == int(des_tem):
+                break
+    cur_tem == des_tem
+    return cur_tem
+    
+print("에어컨을 작동합니다.")
+while True:
+    des_tem = input("원하는 온도를 설정해 주세요. : ")
+    try:
+        if int(des_tem) >= 18 and int(des_tem) <= 30:
+            if int(des_tem) == 20:
+                print("현재 온도는 20도 입니다.")
+            set_tem(des_tem)
+        elif int(des_tem) < 18 or int(des_tem) > 30:
+            print("입력을 확인해 주세요.")
+    except ValueError:
+        break
+print("에어컨을 종료합니다.")
